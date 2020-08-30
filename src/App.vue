@@ -1,28 +1,28 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app">
+        <el-container>
+            <el-main>
+                <el-button type="primary" @click="doUpload">上传文件</el-button>
+            </el-main>
+        </el-container>
+        <el-dialog v-if="openFileDialog" :visible.sync="openFileDialog" :modal-append-to-body="true"
+                   append-to-body :show-close="false" :close-on-click-modal="false" :close-on-press-escape="false"
+                   width="776px">
+            <upload-file ref="upload" :data="attachmentFromData" :headers="headers" :onSuccess="handleSuccess"
+                         :action="action"></upload-file>
+            <span slot="footer" class="dialog-footer" style="padding-right:10px;"><el-button
+                    @click="openFileDialog = false">关 闭</el-button><el-button type="primary"
+                                                                              v-show="false">保 存</el-button></span>
+        </el-dialog>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+    import app from "@/app";
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+    export default app;
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="less">
+    @import url(./assets/styles/public.less);
 </style>

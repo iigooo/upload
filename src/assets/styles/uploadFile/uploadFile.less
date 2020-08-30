@@ -1,0 +1,191 @@
+#upload {
+  /* 文件上传 */
+
+  .table {
+    border: 1px solid #e4e7ee;
+    margin: 0 32px;
+  }
+
+  .table__body-wrapper {
+    height: 200px;
+  }
+
+  .successColor {
+    color: #56d990;
+  }
+
+  .failColor {
+    color: #f56c6c;
+  }
+
+  .upload__success {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    width: 100%;
+    background: #62a3ff;
+    z-index: 999;
+    align-items: center;
+    font-weight: bold;
+    font-size: 12px;
+    color: #fff;
+    padding: 0 17px;
+  }
+
+  .upload__footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .keepUpload {
+    font-size: 14px;
+    color: #4077e8;
+    cursor: pointer;
+    align-items: center;
+    line-height: 31px;
+    position: relative;
+  }
+
+  .keepUpload:hover:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 0;
+    bottom: 1px;
+    border-bottom: 1px solid #4077e6;
+  }
+
+  .upload__tips {
+    display: block;
+    text-align: center;
+    width: 340px;
+    margin: 18px 0 0 0;
+  }
+
+  .upload__size {
+    text-align: center;
+    color: #3b7fe8;
+    font-size: 12px;
+  }
+
+  .upload__images {
+    text-align: center;
+  }
+
+  .upload__header {
+    display: flex;
+    align-items: center;
+    padding: 32.4px 0 15.6px 32px;
+    font-weight: bold;
+  }
+
+  .progress {
+    width: 100%;
+    height: 30px;
+  }
+
+  .progress__number {
+    transition: width 0.6s ease;
+  }
+
+  .upload {
+    /*min-height: 334px;*/
+    position: relative;
+    font-family: PingFang SC;
+  }
+
+  .upload__noDate {
+    height: 240px;
+    width: 100%;
+    position: absolute;
+    background: #fff;
+    top: 80px;
+  }
+
+  .upload__button {
+    margin: 0 32px;
+    text-align: center;
+    height: 240px;
+    border: 1px solid #e4e7ee;
+    border-bottom: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .cell {
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-break: break-all;
+    line-height: 23px;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: left;
+  }
+
+  .table__header,
+  .table__body {
+    table-layout: fixed;
+    border-collapse: separate;
+    width: 100%;
+  }
+
+  .table__header th,
+  .table__body td {
+    text-align: left;
+    padding: 7px 0;
+    min-width: 0;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    box-shadow: inset 0 -1px 0 0 #e4e7ee;
+  }
+
+  .table__header th {
+    font-size: 12px;
+    color: #8a8f99;
+    height: 40px;
+  }
+
+  .table__body td {
+    padding: 17px 0;
+  }
+
+  .table th {
+    overflow: hidden;
+    user-select: none;
+    background-color: #fff;
+    color: #8a8f99;
+    font-weight: normal;
+  }
+
+  .table th > .cell {
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+    vertical-align: middle;
+    padding-left: 24px;
+    padding-right: 24px;
+    width: 100%;
+  }
+
+  .action {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .action + .action {
+    margin-left: 16px;
+  }
+
+  .uploading {
+    color: #3B7CFF;
+  }
+
+  /* 文件上传end */
+}
