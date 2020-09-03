@@ -21,7 +21,7 @@ export default class ApiServer {
     async instance(sourceToken) {
         let _config = {
             baseURL: this.baseUrl,
-            timeout: 3000,
+            timeout: 10000,
             headers: {"Authorization": '', "AccountId": ''},
         };
         if (sourceToken) {
