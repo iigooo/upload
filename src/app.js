@@ -1,5 +1,12 @@
 import uploadFile from '@/components/uploadFile/uploadFile.vue'
 import openBox from "@/components/openBox/openBox.vue";
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+// import myUploadAdapter from "./myUploadAdapter";
+// import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter';
+import MyUploadAdapter_inner from "./myUploadAdapter-inner";
+
+
+// ClassicEditor.builtinPlugins = [Base64UploadAdapter];
 
 export default {
     name: 'App',
@@ -20,6 +27,18 @@ export default {
             role20: [],
             menu16: [],
             menu20: [],
+            editor: ClassicEditor,
+            editorData: '<p>Content of the editor.</p>',
+            editorConfig: {
+                // The configuration of the editor.
+                simpleUpload: {
+                    // The URL the images are uploaded to.
+                    uploadUrl: 'http://example.com',
+
+                    // Headers sent along with the XMLHttpRequest to the upload server.
+                    headers: {}
+                },
+            }
         }
     },
     computed: {
@@ -34,6 +53,16 @@ export default {
         openBox
     },
     methods: {
+        onEditorReady(ceditor) {
+            ceditor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
+                // Configure the URL to the upload script in your back-end here!
+                return new MyUploadAdapter_inner(loader);
+            };
+            console.log(ceditor.plugins)
+        },
+        test() {
+            console.log(this.editorData)
+        },
         doUpload() {
             let _this = this;
             _this.openFileDialog = true;
